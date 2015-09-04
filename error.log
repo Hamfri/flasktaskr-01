@@ -1,3 +1,5 @@
 
 500 error at 03-09-2015 21:23:34: http://localhost:5000/
 404 error at 03-09-2015 21:24:28: http://localhost:5000/tasks/979
+404 error at 04-09-2015 11:17:59: http://0.0.0.0:5000/favicon.ico
+404 error at 04-09-2015 11:25:23: http://localhost/this-route-does-not/
