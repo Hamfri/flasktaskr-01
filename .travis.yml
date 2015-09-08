@@ -6,10 +6,4 @@ install:
 - pip install -r requirements.txt
 script:
 - nosetests
-deploy:
-  provider: heroku
-  api_key:
-    secure: TUkXKy9sxAqFG1lOv1onjNY1/OoNAJ18NkFQFqFoL1myO1d0uRrlfFS6BMRfda+FTB+mYNpCc7UqheG/fJ+sZgd4WrxQ6tzNlOc1hpWbOYFPzLirn53g/dh2PwZJFx/R2iVagi7zmUNmcrF5Gg8LoCGN8/JctWIEOeoHp5ReJV5JQvQjtbscIsbE44T3h2z9hb05G5g+Ooiimk50jHkMt0Oo5xUc7d7TucMiUjtFUQbuF1Y8GDjj7q+LZkaefPO8Aj9hR9mXZMASIHFG3LA10LyBPBqeTReHBIlNuuNwwlyR301waaWPS+dVp6itAYxH0rjKkRpSX+t9fNHStsXIHYkxyOxUVBc+Kqs+07Et6Akt/4pVVtF3J3rCRH7Z2ooWWIYTyc1sgIOpK1D8ekijKm2tu/xDGtD+0FWYEu/XTiXkWQ55GXRZJIP4HcvqR/9EnJ+Vjf1MihIG1eCb+CtwwH1Q+dHZr4sRILkUVpvxgjD7mzbfYCeOvTUN/64vBG35pFFQm87fAGB+F9oysD2fork+OYADsoBOc97Jy32ScUSGAPxMgzEEvutJrIMnxWJLnn/vy7tuf/XglL5CRT3ryReI+7WLVWwIRTWhXvPbR+0uSf/EWa/FAeU37REWrYT55skU1MKEWDHBVl2IGByw1Q33QAKKQNHpKpcmNq+tSA8=
-  app: flasktasks
-  on:
-    repo: Hamfri/flasktaskr-01
+
