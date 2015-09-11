@@ -5,3 +5,4 @@ vivid
 *.db
 .coverage
 htmlcov
+error.log
