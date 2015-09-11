@@ -47,8 +47,8 @@ def logout():
     flash('Goodbye!')
     return redirect(url_for('users.login'))
 
-#@users_blueprint.route('/', methods=['GET','POST'])
-#def login():
+@users_blueprint.route('/', methods=['GET','POST'])
+def login():
     error = None
     form = LoginForm(request.form)
     if request.method == 'POST':
