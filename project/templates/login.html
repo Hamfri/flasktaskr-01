@@ -5,8 +5,10 @@
 <div class="lead">Please sign in to access your task list</div>
 <form class="form-signin" role="form" method="post" action="/">
 	{{ form.csrf_token }}
-	<p>
-		{{ form.name(placeholder="name") }}
+
+	<div class="form-group"> 
+	    {{form.name.label}}
+		{{ form.name(class="form-control", placeholder="Username") }}
 		<span class="error">
 			{% if form.name.errors %}
 			{% for error in form.name.errors %}
@@ -14,9 +16,11 @@
 			{% endfor %}
 			{% endif %}
 		</span>
-	</p>
-	<p>
-		{{ form.password(placeholder="password")}}
+	</div>
+
+	<div class="form-group"> 
+	    {{ form.password.label}}
+		{{ form.password(class="form-control", placeholder="password")}}
 		<span class="error">
 			{% if form.password.errors %}
 			{% for error in form.password.errors %}
@@ -24,7 +28,8 @@
 			{% endfor %}
 			{% endif %}
 		</span>
-	</p>
+	</div>
+
 	<button class="btn btn-sm btn-success" type="submit">Sign in</button>
 	<br>
 	<br>
