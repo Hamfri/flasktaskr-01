@@ -40,3 +40,15 @@ def deploy():
 
 def rollback():
     local("heroku rollback")
+    
+    
+def create_app():
+    local("heroku apps:create flasktasks")
+    local("git push heroku master")
+    local("heroku addons:create heroku-postgresql:hobby-dev")
+    local("heroku ps")
+    local("heroku open")
+    local("heroku logs")
+
+def create():
+    create_app()
