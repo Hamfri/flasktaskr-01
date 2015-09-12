@@ -4,10 +4,12 @@
 <h1>Welcome to FlaskTaskr</h1>
 <div class="add-task">
 	<h3>Add a new task: </h3>
-	<form action="{{ url_for('tasks.new_task') }}" method="post">
+	<form action="{{ url_for('tasks.new_task') }}" method="post" role="form">
 		{{ form.csrf_token }}
-		<p>
-			{{ form.name(placeholder="name") }}
+
+		<div class="form-group">
+		    {{ form.name.label }}
+			{{ form.name(class="form-control", placeholder="name") }}
 			<span class="error">
 			{% if form.name.errors %}
 			{% for error in form.name.errors %}
@@ -15,10 +17,11 @@
 			{% endfor %}
 			{% endif %}
 			</span>
-		</p>
+		</div>
 
-		<p>
-			{{ form.due_date(placeholder="due date mm/dd/yyyy") }}
+		<div class="form-group">
+		    {{ form.due_date.label }}
+			{{ form.due_date(id="datepicker", class="form-control", placeholder="due date mm/dd/yyyy") }}
 			<span class="error">
 				{% if form.due_date.errors %}
 				{% for error in form.due_date.errors %}
@@ -26,11 +29,11 @@
 				{% endfor %}
 				{% endif %}
 			</span>
-		</p>
+		</div>
 
-		<p>
+		<div class="form-group">
 			{{ form.priority.label }}
-			{{ form.priority }}
+			{{ form.priority(class="form-control") }}
 			<span class="Error">
 				{% if form.priority.errors %}
 				{% for error in form.priority.errors %}
@@ -38,7 +41,8 @@
 				{% endfor %}
 				{% endif %}
 			</span>
-		</p>
+		</div>
+
 		<p><input class="btn btn-default" type="submit" value="Submit"></p>
 	</form>
 </div>
@@ -46,23 +50,23 @@
 <div class="entries">
 	<br>
 	<br>
-	<h2>Open Tasks:</h2>
-	<div class="datagrid">
+	<h2 class="open-t">Open Tasks:</h2>
+	<div class="open">
 		<table>
 			<thead>
 			<tr>
 				<th width="200px"><strong>Task Name</strong></th>
-				<th width="75px"><strong>Due Date</strong></th>
+				<th width="100px"><strong>Due Date</strong></th>
 				<th width="100px"><strong>Posted Date</strong></th>
 				<th width="50px"><strong>Priority</strong></th>
 				<th width="90px"><strong>Posted By</strong></th>
-				<th><strong>Actions</strong></th>
+				<th width="100px"><strong>Actions</strong></th>
 			</tr>
 			</thead>
 			{% for task in open_tasks %}
 			<tr>
 				<td width="200px">{{task.name}}</td>
-				<td width="75px">{{ task.due_date }}</td>
+				<td width="100px">{{ task.due_date }}</td>
 				<td width="100px">{{ task.posted_date }}</td>
 				<td width="50px">{{ task.priority }}</td>
 				<td width="90px">{{ task.poster.name }}</td>
@@ -86,26 +90,26 @@
 
 
 <div class="entries">
-	<h2>Closed tasks:</h2>
-	<div class="datagrid">
+	<h2 class="closed-t">Closed tasks:</h2>
+	<div class="complete">
 		<table>
 			<thead>
 				<tr>
 					<th width="200px"><strong>Task Name</strong></th>
-					<th width="75px"><strong>Due date</strong></th>
-					<th width="100px"><strong>Posted Date</strong></th>
-					<th width="50"><strong>Priority</strong></th>
-					<th width="90"><strong>Posted By</strong></th>
-					<th><strong>Actions</strong></th>
+					<th width="100px"><strong>Due date</strong></th>
+					<th width="110px"><strong>Posted Date</strong></th>
+					<th width="50px"><strong>Priority</strong></th>
+					<th width="100px"><strong>Posted By</strong></th>
+					<th width="100px"><strong>Actions</strong></th>
 				</tr>
 			</thead>
 			{% for task in closed_tasks %}
 			<tr>
 				<td width="200px">{{ task.name }}</td>
-				<td width="75px">{{ task.due_date }}</td>
-				<td width="100px">{{ task.posted_date }}</td>
-				<td width="50">{{ task.priority }}</td>
-				<td width="90">{{ task.poster.name }}</td>
+				<td width="102px">{{ task.due_date }}</td>
+				<td width="110px">{{ task.posted_date }}</td>
+				<td width="50px">{{ task.priority }}</td>
+				<td width="100px">{{ task.poster.name }}</td>
 				<td>
 				{% if task.poster.name == session.name or session.role == "admin" %}
 				<a href="{{ url_for('tasks.delete_entry', task_id=task.task_id) }}">Delete</a>

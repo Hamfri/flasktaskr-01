@@ -1,7 +1,8 @@
 *.pyc
 __pycache__
-flasktaskr-01.komodoproject
+flasktasker.komodoproject
 vivid
 *.db
 .coverage
 htmlcov
+error.log

@@ -10,44 +10,44 @@ body {
 	font-size: .8em;
 }
 
-/* Custom styles for the table */
+/* Custom css for bootstrap forms */
+.form-control{
+	width: 300px;
+}
 
-.datagrid table {
-border-collapse: collapse;
-text-align: left;
-width: 100%;
+.register-form .btn-success{
+	width: 300px;
 }
-.datagrid {
-background: #fff;
-overflow: hidden;
-border: 1px solid #000000;
-border-radius: 3px;
+.form-signin .btn-success{
+	width: 300px;
 }
-.datagrid table td, .datagrid table th {
-padding: 3px 10px;
+
+
+.open .complete{
+	width: 100%;
+	border-collapse: collapse;
+	overflow: hidden;
 }
-.datagrid table thead th {
-background-color:#000000;
-color:#FFFFFF;
-font-size: 15px;
-font-weight: bold;
+.open td, .complete td, .open th, .complete th{
+	font-size: 1em;
+	border: 1px solid #fff;
+	padding: 3px 7px 2px 7px;
 }
-.datagrid table thead th:first-child {
-border: none;
+.open th, .complete th{
+	font-size: 1.1em;
+	text-align: left;
+	padding: 7px;
+	background-color: #505050;
+	color: #fff;
 }
-.datagrid table tbody td {
+
+.open tr:nth-child(2n+2), .complete tr:nth-child(2n+2) {
 	color: #000000;
-border-left: 1px solid #E1EEF4;
-font-size: 12px;
-font-weight: normal;
+	background-color: #C8C8C8;
 }
-.datagrid table tbody .alt td {
-background: #E1EEF4;
-color: #000000;
-}
-.datagrid table tbody td:first-child {
-border-left: none;
-}
-.datagrid table tbody tr:last-child td {
-border-bottom: none;
+
+.open-t, .closed-t{
+	color: #fff;
+	background: #505050;
+	width: 200px;
 }

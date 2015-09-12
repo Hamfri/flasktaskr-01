@@ -3,11 +3,12 @@
 
 <h1>Welcome to FlaskTaskr.</h1>
 <h3>Please register to access the task list.</h3>
-<form method="POST" action="{{ url_for('users.register')}}">
+<form class="register-form" method="POST" action="{{ url_for('users.register')}}" role="form">
 	{{ form.csrf_token }}
 
-	<p>
-		{{ form.name(placeholder="name")}}
+	<div class="form-group">
+	    {{ form.name.label }}
+		{{ form.name(class="form-control", placeholder="name")}}
 		{% if form.name.errors %}
 		<span class="error">
 			{% for error in form.name.errors %}
@@ -15,10 +16,11 @@
 			{% endfor %}
 		</span>
 		{% endif %}
-	</p>
+	</div>
 
-	<p>
-		{{ form.email(placeholder="email@example.com")}}
+	<div class="form-group"> 
+	    {{ form.email.label }}
+		{{ form.email(class="form-control", placeholder="email@example.com")}}
 		{% if form.email.errors %}
 		<span class="error">
 			{% for error in form.email.errors %}
@@ -26,10 +28,11 @@
 			{% endfor %}
 		</span>
 		{% endif %}
-	</p>
+	</div>
 
-	<p>
-		{{ form.password(placeholder="Password")}}
+	<div class="form-group">
+	    {{ form.password.label }}
+		{{ form.password(class="form-control", placeholder="Password")}}
 		{% if form.password.errors %}
 		<span class="error">
 		{% for error in form.password.errors %}
@@ -37,10 +40,11 @@
 			{% endfor %}
 		</span>
 		{% endif %}
-	</p>
+	</div>
 
-	<p>
-		{{ form.confirm(placeholder="Password(Again)")}}
+	<div class="form-group">
+	    {{ form.confirm.label }}
+		{{ form.confirm(class="form-control", placeholder="Password(Again)")}}
 		{% if form.confirm.errors %}
 		<span class="error">
 			{% for error in form.confirm.errors %}
@@ -48,7 +52,7 @@
 			{% endfor %}
 		</span>
 		{% endif %}
-	</p>
+	</div>
 	<button class="btn btn-sm btn-success" type="submit">Register</button>
 	<br>
 	<p><em>Already Registered?</em> Click <a href="/">here</a> to login.</p>
